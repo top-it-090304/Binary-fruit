@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://2wxgert8xvx8"]
+
+[ext_resource type="Script" uid="uid://b2vyfil6jcllq" path="res://Mario_player/Mini_Mario.gd" id="1_24eo0"]
+[ext_resource type="Texture2D" uid="uid://bdu1ylvr1s2up" path="res://mario_texsture/mario_and_items.png" id="2_cx3od"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24eo0"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(54, 72, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csdot"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(36, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj3kt"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(36, 72, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a26xs"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(0, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66njt"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(0, 72, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scmb4"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(36, 0, 18, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vraiy"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(36, 72, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bilb"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(72, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkyuf"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(90, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1tou"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(108, 0, 18, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1nke"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(72, 72, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khqdx"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(90, 72, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij154"]
+atlas = ExtResource("2_cx3od")
+region = Rect2(108, 72, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r2sxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24eo0")
+}],
+"loop": false,
+"name": &"Death_mini",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csdot")
+}],
+"loop": false,
+"name": &"Fall_Big",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj3kt")
+}],
+"loop": true,
+"name": &"Fall_mini",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a26xs")
+}],
+"loop": false,
+"name": &"Idle_Big",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66njt")
+}],
+"loop": true,
+"name": &"Idle_mini",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scmb4")
+}],
+"loop": false,
+"name": &"Jump_Big",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vraiy")
+}],
+"loop": true,
+"name": &"Jump_mini",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bilb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkyuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1tou")
+}],
+"loop": true,
+"name": &"Walk_Big",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1nke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khqdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij154")
+}],
+"loop": true,
+"name": &"Walk_mini",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ljqm"]
+radius = 9.0
+height = 18.0
+
+[node name="Mini_Mario" type="CharacterBody2D" unique_id=779611243]
+script = ExtResource("1_24eo0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497098791]
+position = Vector2(3.8146973e-06, 1.9073486e-06)
+scale = Vector2(1.0277778, 1.0277778)
+sprite_frames = SubResource("SpriteFrames_r2sxd")
+animation = &"Death_mini"
+autoplay = "Idle_mini"
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018610171]
+shape = SubResource("CapsuleShape2D_7ljqm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=367167616]
+zoom = Vector2(2.4, 2.4)
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 3644
+limit_bottom = 600
+position_smoothing_enabled = true
+drag_horizontal_enabled = true

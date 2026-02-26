@@ -1,0 +1,13 @@
+Label
+CollisionShape2D
+Area2D
+CanvasLayer
+Button
+Node2D
+MarginContainer
+AnimatedSprite2D
+CharacterBody2D
+Camera2D
+TileMap
+ParallaxLayer
+ParallaxBackground
