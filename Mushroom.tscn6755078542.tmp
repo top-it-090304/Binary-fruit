@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dulk01e46evdl"]
+
+[ext_resource type="Script" uid="uid://5nn05yujn6kn" path="res://mushroom.gd" id="1_rs2b5"]
+[ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="2_rs2b5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ij6vw"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnt1q"]
+atlas = ExtResource("2_rs2b5")
+region = Rect2(36, 19, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll876"]
+atlas = ExtResource("2_rs2b5")
+region = Rect2(0, 19, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d8vl"]
+atlas = ExtResource("2_rs2b5")
+region = Rect2(18, 19, 18, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd465"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnt1q")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll876")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d8vl")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs2b5"]
+size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnt1q"]
+size = Vector2(2, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ll876"]
+size = Vector2(2, 10)
+
+[node name="Mushroom" type="CharacterBody2D" unique_id=1023285947]
+script = ExtResource("1_rs2b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1591319373]
+shape = SubResource("CircleShape2D_ij6vw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=673571721]
+position = Vector2(0, 1)
+scale = Vector2(0.8333333, 0.8333334)
+sprite_frames = SubResource("SpriteFrames_dd465")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="Head" type="Area2D" parent="." unique_id=1131812438]
+
+[node name="Head_c" type="CollisionShape2D" parent="Head" unique_id=304358405]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_rs2b5")
+
+[node name="Left" type="Area2D" parent="." unique_id=1250624112]
+
+[node name="Left_site" type="CollisionShape2D" parent="Left" unique_id=1954172408]
+position = Vector2(-7, 2)
+shape = SubResource("RectangleShape2D_lnt1q")
+
+[node name="Right" type="Area2D" parent="." unique_id=126184310]
+
+[node name="Right_site" type="CollisionShape2D" parent="Right" unique_id=926044482]
+position = Vector2(7, 2)
+shape = SubResource("RectangleShape2D_ll876")
+
+[connection signal="body_entered" from="Head" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]

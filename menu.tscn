@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://do58b0qldyexg"]
+
+[ext_resource type="PackedScene" uid="uid://ceafoshr36m6n" path="res://background.tscn" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://djfhs72lb66k8" path="res://menu.gd" id="1_ouk20"]
+
+[node name="Menu" type="Node2D" unique_id=52025238]
+script = ExtResource("1_ouk20")
+
+[node name="Background" parent="." unique_id=618884780 instance=ExtResource("1_lti8b")]
+
+[node name="Play" type="Button" parent="." unique_id=802507506]
+physics_interpolation_mode = 1
+offset_left = 205.0
+offset_top = 481.0
+offset_right = 451.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 34
+text = "Play"
+
+[node name="Exit" type="Button" parent="." unique_id=307964076]
+offset_left = 696.0
+offset_top = 481.0
+offset_right = 942.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 34
+text = "Exit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
