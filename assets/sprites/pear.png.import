@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5u6csaycyhur"
-path="res://.godot/imported/mandarin.png-ac5db810f836bd792d495736891ab6a1.ctex"
+uid="uid://ddwqcpnwakk1y"
+path="res://.godot/imported/pear.png-85050d0dae55b244795e5c64ee72d58b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mandarin.png"
-dest_files=["res://.godot/imported/mandarin.png-ac5db810f836bd792d495736891ab6a1.ctex"]
+source_file="res://assets/sprites/pear.png"
+dest_files=["res://.godot/imported/pear.png-85050d0dae55b244795e5c64ee72d58b.ctex"]
 
 [params]
 

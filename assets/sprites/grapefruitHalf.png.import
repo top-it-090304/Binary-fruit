@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pkwtgixaiqak"
-path="res://.godot/imported/peach.png-26f91e4702e29f918d2e51bf40214aa1.ctex"
+uid="uid://wuohy1ap2rnx"
+path="res://.godot/imported/grapefruitHalf.png-64d1ce250e76f5b0266810e2591c6c28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/peach.png"
-dest_files=["res://.godot/imported/peach.png-26f91e4702e29f918d2e51bf40214aa1.ctex"]
+source_file="res://assets/sprites/grapefruitHalf.png"
+dest_files=["res://.godot/imported/grapefruitHalf.png-64d1ce250e76f5b0266810e2591c6c28.ctex"]
 
 [params]
 

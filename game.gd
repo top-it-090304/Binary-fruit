@@ -103,7 +103,9 @@ func spawn_fruit() -> void:
 	if randf() < 0.1:
 		fruit.is_bomb = true
 	else:
-		var fruit_types = ["apple", "banana", "watermelon", "pineapple", "kiwi", "strawberry", "mandarin", "lemon", "grape"]
+		var fruit_types = ["apple", "banana", "watermelon", "pineapple", "kiwi",
+		 "strawberry", "mandarin", "lemon", "grape", "garnet", "grapefruit","orange", 
+		"passionfruit", "peach", "pear"]
 		fruit.fruit_type = fruit_types[randi() % fruit_types.size()]
 	
 	fruits.append(fruit)
@@ -324,12 +326,14 @@ func create_splatter(position: Vector2, fruit_type: String) -> void:
 				color = Color(1.0, 0.043, 0.302, 0.6) 
 			"orange", "peach", "mandarin":
 				color = Color(1.0, 0.506, 0.047, 0.6) 
-			"grape":
-				color = Color(0.6, 0.2, 0.8, 0.6)
-			"kiwi", "apple":
-				color = Color(0.573, 0.953, 0.153, 0.6)
+			"grape", "passion":
+				color = Color(0.6, 0.2, 0.8, 0.867)
+			"kiwi", "apple", "pear":
+				color = Color(0.486, 0.953, 0.153, 0.816)
 			"cherry", "strawberry":
 				color = Color(1.0, 0.1, 0.1, 0.6)
+			"grapefruit", "peach":
+				color = Color(0.839, 0.447, 0.047, 0.82)	
 		
 		splatter.modulate = color
 		game_area.add_child(splatter)

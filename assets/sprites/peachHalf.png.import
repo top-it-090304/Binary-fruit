@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bba3x0oxcsoi6"
-path="res://.godot/imported/orangeHalf.jpg-ba668b9e90f17b1e049a2400095ef18e.ctex"
+uid="uid://c2x6glrgsbl1g"
+path="res://.godot/imported/peachHalf.png-4d4f788260c986e95263d96241d22c25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/orangeHalf.jpg"
-dest_files=["res://.godot/imported/orangeHalf.jpg-ba668b9e90f17b1e049a2400095ef18e.ctex"]
+source_file="res://assets/sprites/peachHalf.png"
+dest_files=["res://.godot/imported/peachHalf.png-4d4f788260c986e95263d96241d22c25.ctex"]
 
 [params]
 

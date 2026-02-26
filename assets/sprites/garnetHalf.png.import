@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pkwtgixaiqak"
-path="res://.godot/imported/peach.png-26f91e4702e29f918d2e51bf40214aa1.ctex"
+uid="uid://cmml1w0ghhjn8"
+path="res://.godot/imported/garnetHalf.png-115f94d0b0bc4f90cd1e6f984be8705b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/peach.png"
-dest_files=["res://.godot/imported/peach.png-26f91e4702e29f918d2e51bf40214aa1.ctex"]
+source_file="res://assets/sprites/garnetHalf.png"
+dest_files=["res://.godot/imported/garnetHalf.png-115f94d0b0bc4f90cd1e6f984be8705b.ctex"]
 
 [params]
 

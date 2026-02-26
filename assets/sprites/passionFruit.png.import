@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pkwtgixaiqak"
-path="res://.godot/imported/peach.png-26f91e4702e29f918d2e51bf40214aa1.ctex"
+uid="uid://b02h8i54ts80h"
+path="res://.godot/imported/passionFruit.png-7ad7fbd9de2bba964036bd0891208bf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/peach.png"
-dest_files=["res://.godot/imported/peach.png-26f91e4702e29f918d2e51bf40214aa1.ctex"]
+source_file="res://assets/sprites/passionFruit.png"
+dest_files=["res://.godot/imported/passionFruit.png-7ad7fbd9de2bba964036bd0891208bf9.ctex"]
 
 [params]
 

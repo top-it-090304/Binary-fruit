@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daotthf4dbhi6"
-path="res://.godot/imported/mandarinHalf.png-6d498c96c2613d79774f842a1acec9b8.ctex"
+uid="uid://dsvg5sja60hmk"
+path="res://.godot/imported/grapefruit.png-5e471ddfff4f754bc3dfa181ca1042c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mandarinHalf.png"
-dest_files=["res://.godot/imported/mandarinHalf.png-6d498c96c2613d79774f842a1acec9b8.ctex"]
+source_file="res://assets/sprites/grapefruit.png"
+dest_files=["res://.godot/imported/grapefruit.png-5e471ddfff4f754bc3dfa181ca1042c5.ctex"]
 
 [params]
 

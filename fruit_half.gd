@@ -7,6 +7,8 @@ var fruit_type: String = "apple"
 var is_left_half: bool = true
 
 var fruit_half_textures = {
+	"peach": "res://assets/sprites/peachHalf.png",
+	"pear": "res://assets/sprites/pearHalf.png", 
 	"apple": "res://assets/sprites/appleHalf.png",
 	"banana": "res://assets/sprites/bananaHalf.png",
 	"watermelon": "res://assets/sprites/watermelonHalf.png",
@@ -15,20 +17,29 @@ var fruit_half_textures = {
 	"strawberry": "res://assets/sprites/strawberryHalf.png",
 	"mandarin": "res://assets/sprites/mandarinHalf.png",
 	"lemon": "res://assets/sprites/lemonHalf.png",
-	"grape": "res://assets/sprites/grapeHalf.png"
-	
+	"grape": "res://assets/sprites/grapeHalf.png",
+	"garnet": "res://assets/sprites/garnetHalf.png",
+	"grapefruit": "res://assets/sprites/grapefruitHalf.png",
+	"orange": "res://assets/sprites/orangeHalf.png",
+	"passionfruit": "res://assets/sprites/passionFruitHalf.png",
 }
 
 var fruit_full_textures = {
+	"peach": "res://assets/sprites/peach.png",
+	"pear": "res://assets/sprites/pear.png",
 	"apple": "res://assets/sprites/apple.png",
-	"banana": "resSS://assets/sprites/banana.png",
+	"banana": "res://assets/sprites/banana.png",
 	"watermelon": "res://assets/sprites/watermelon.png",
 	"pineapple": "res://assets/sprites/pineapple.png",
 	"kiwi": "res://assets/sprites/kiwi.png",
 	"strawberry": "res://assets/sprites/strawberry.png",
 	"mandarin": "res://assets/sprites/mandarin.png",
 	"lemon": "res://assets/sprites/lemon.png",
-	"grape": "res://assets/sprites/grape.png"
+	"grape": "res://assets/sprites/grape.png",
+	"garnet": "res://assets/sprites/garnet.png",
+	"grapefruit": "res://assets/sprites/grapefruit.png",
+	"orange": "res://assets/sprites/orange.png",
+	"passionfruit": "res://assets/sprites/passionFruit.png"
 }
 
 func _ready() -> void:

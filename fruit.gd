@@ -9,6 +9,8 @@ var velocity: Vector2 = Vector2.ZERO
 
 # Список доступных фруктов
 var fruit_textures = {
+	"peach": "res://assets/sprites/peach.png",
+	"pear": "res://assets/sprites/pear.png",
 	"apple": "res://assets/sprites/apple.png",
 	"banana": "res://assets/sprites/banana.png",
 	"watermelon": "res://assets/sprites/watermelon.png",
@@ -17,7 +19,12 @@ var fruit_textures = {
 	"strawberry": "res://assets/sprites/strawberry.png",
 	"mandarin": "res://assets/sprites/mandarin.png",
 	"lemon": "res://assets/sprites/lemon.png",
-	"grape": "res://assets/sprites/grape.png"
+	"grape": "res://assets/sprites/grape.png",
+	"garnet": "res://assets/sprites/garnet.png",
+	"grapefruit": "res://assets/sprites/grapefruit.png",
+	"orange": "res://assets/sprites/orange.png",
+	"passionfruit": "res://assets/sprites/passionFruit.png",
+
 }
 
 func _ready() -> void:
