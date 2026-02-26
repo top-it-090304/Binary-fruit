@@ -104,7 +104,7 @@ func spawn_fruit() -> void:
 		fruit.is_bomb = true
 	else:
 		var fruit_types = ["apple", "banana", "watermelon", "pineapple", "kiwi",
-		 "strawberry", "mandarin", "lemon", "grape", "garnet", "grapefruit","orange", 
+		 "strawberry", "lemon", "grape", "garnet", "grapefruit","orange", 
 		"passionfruit", "peach", "pear"]
 		fruit.fruit_type = fruit_types[randi() % fruit_types.size()]
 	
@@ -324,7 +324,7 @@ func create_splatter(position: Vector2, fruit_type: String) -> void:
 				color = Color(1.0, 0.9, 0.2, 0.6)
 			"watermelon":
 				color = Color(1.0, 0.043, 0.302, 0.6) 
-			"orange", "peach", "mandarin":
+			"orange", "peach":
 				color = Color(1.0, 0.506, 0.047, 0.6) 
 			"grape", "passion":
 				color = Color(0.6, 0.2, 0.8, 0.867)

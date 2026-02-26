@@ -15,7 +15,6 @@ var fruit_half_textures = {
 	"pineapple": "res://assets/sprites/pineappleHalf.png",
 	"kiwi": "res://assets/sprites/kiwiHalf.png",
 	"strawberry": "res://assets/sprites/strawberryHalf.png",
-	"mandarin": "res://assets/sprites/mandarinHalf.png",
 	"lemon": "res://assets/sprites/lemonHalf.png",
 	"grape": "res://assets/sprites/grapeHalf.png",
 	"garnet": "res://assets/sprites/garnetHalf.png",
@@ -33,7 +32,6 @@ var fruit_full_textures = {
 	"pineapple": "res://assets/sprites/pineapple.png",
 	"kiwi": "res://assets/sprites/kiwi.png",
 	"strawberry": "res://assets/sprites/strawberry.png",
-	"mandarin": "res://assets/sprites/mandarin.png",
 	"lemon": "res://assets/sprites/lemon.png",
 	"grape": "res://assets/sprites/grape.png",
 	"garnet": "res://assets/sprites/garnet.png",
@@ -46,16 +44,22 @@ func _ready() -> void:
 	var tex_path: String = ""
 	if fruit_type in fruit_half_textures:
 		tex_path = fruit_half_textures[fruit_type]
+		print("Загрузка текстуры: ", tex_path)
 		var texture = load(tex_path) as Texture2D
 		if texture:
+			print("Текстура загружена, размер: ", texture.get_width(), "x", texture.get_height())
 			sprite.texture = texture
 			sprite.region_enabled = false
-			sprite.scale = Vector2(0.35, 0.35)
+			sprite.scale = Vector2(0.35, 0.35)  
 			if not is_left_half:
 				sprite.flip_h = true
 			sprite.position.x = 10 if is_left_half else -10
+		else:
+			print("НЕ УДАЛОСЬ загрузить текстуру половинки!")
+	
 	if not sprite.texture and fruit_type in fruit_full_textures:
 		tex_path = fruit_full_textures[fruit_type]
+		print("обрезка целой текстуры: ", tex_path)
 		var texture = load(tex_path) as Texture2D
 		if texture:
 			sprite.texture = texture
@@ -68,7 +72,9 @@ func _ready() -> void:
 			else:
 				sprite.region_rect = Rect2(tw / 2, 0, tw / 2, th)
 				sprite.position.x = 8
-			sprite.scale = Vector2(0.35, 0.35)
+			sprite.scale = Vector2(0.35, 0.35)  
+	
+	print("Итоговый масштаб: ", sprite.scale)  
 	
 	var angle: float
 	if is_left_half:
