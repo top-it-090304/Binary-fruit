@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.15, 0.2, 0.25, 1)
+color = Color(0.7490196, 0.8039216, 0.41568628, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1240156406]
 layout_mode = 1
@@ -36,21 +36,28 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1266591825]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 text = "Настройки"
 horizontal_alignment = 1
 
 [node name="SoundCheckBox" type="CheckBox" parent="VBoxContainer" unique_id=673770745]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.94509804, 0.9490196, 0.9490196, 1)
+theme_override_colors/icon_normal_color = Color(0.17437619, 0.61247015, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+theme_override_font_sizes/font_size = 60
+theme_override_colors/checkbox_unchecked_color = Color(0, 0.23921569, 1, 1)
 text = "Звук"
 
 [node name="MusicCheckBox" type="CheckBox" parent="VBoxContainer" unique_id=461626970]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
 text = "Музыка"
 
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1738731286]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 70
 text = "Назад"
