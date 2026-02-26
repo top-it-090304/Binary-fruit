@@ -88,11 +88,9 @@ func _on_spawn_timer_timeout() -> void:
 	if not is_game_active:
 		return
 
-	spawn_fruit()
-	spawn_fruit()
-	spawn_fruit()  
-	# spawn_fruit()
-
+	var count = randi() % 2 + 1  # Будет 1 или 2
+	for i in range(count):
+		spawn_fruit()
 	
 
 
@@ -103,8 +101,8 @@ func spawn_fruit() -> void:
 	if randf() < 0.1:
 		fruit.is_bomb = true
 	else:
-		var fruit_types = ["apple", "banana", "watermelon", "pineapple", "kiwi",
-		 "strawberry", "lemon", "grape", "garnet", "grapefruit","orange", 
+		var fruit_types = [ "banana", "watermelon", "pineapple", "kiwi",
+		 "strawberry", "mandarin", "lemon", "grape", "garnet", "grapefruit","orange", 
 		"passionfruit", "peach", "pear"]
 		fruit.fruit_type = fruit_types[randi() % fruit_types.size()]
 	

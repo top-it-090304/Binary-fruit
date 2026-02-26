@@ -32,7 +32,10 @@ func _ready() -> void:
 		var texture = load(fruit_textures[fruit_type])
 		if texture:
 			sprite.texture = texture
-	
+	else:
+		# Если тип фрукта не найден в словаре, удаляем объект
+		print("Ошибка: неизвестный тип фрукта - ", fruit_type)
+		queue_free()
 	sprite.scale = Vector2(0.4, 0.4)
 	
 	var angle = randf_range(-PI/1.9 - 0.12, -PI/1.9 + 0.12)  

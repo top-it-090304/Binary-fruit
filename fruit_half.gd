@@ -9,7 +9,6 @@ var is_left_half: bool = true
 var fruit_half_textures = {
 	"peach": "res://assets/sprites/peachHalf.png",
 	"pear": "res://assets/sprites/pearHalf.png", 
-	"apple": "res://assets/sprites/appleHalf.png",
 	"banana": "res://assets/sprites/bananaHalf.png",
 	"watermelon": "res://assets/sprites/watermelonHalf.png",
 	"pineapple": "res://assets/sprites/pineappleHalf.png",
@@ -26,7 +25,6 @@ var fruit_half_textures = {
 var fruit_full_textures = {
 	"peach": "res://assets/sprites/peach.png",
 	"pear": "res://assets/sprites/pear.png",
-	"apple": "res://assets/sprites/apple.png",
 	"banana": "res://assets/sprites/banana.png",
 	"watermelon": "res://assets/sprites/watermelon.png",
 	"pineapple": "res://assets/sprites/pineapple.png",
