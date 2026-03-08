@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dad8e7f6g5h4"]
 
 [ext_resource type="Script" uid="uid://c0dmwtsso7hf2" path="res://main_menu.gd" id="1_main"]
+[ext_resource type="Texture2D" uid="uid://b34445lctjn0p" path="res://assets/menu.png" id="2_menu_bg"]
 
 [node name="MainMenu" type="Control" unique_id=467631516]
 layout_mode = 3
@@ -11,16 +12,63 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_main")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1961818251]
+[node name="Background" type="TextureRect" parent="." unique_id=1961818251]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.7490196, 0.8039216, 0.41568628, 1)
+texture = ExtResource("2_menu_bg")
+stretch_mode = 6
+
+[node name="PlayArea" type="Button" parent="." unique_id=200000001]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -610.0
+offset_right = 260.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[node name="SettingsArea" type="Button" parent="." unique_id=200000002]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -110.0
+offset_right = 260.0
+offset_bottom = 390.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[node name="ExitArea" type="Button" parent="." unique_id=200000003]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = 390.0
+offset_right = 260.0
+offset_bottom = 890.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=401405857]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,19 +81,27 @@ offset_right = 150.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=155982959]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "🥷 Fruit Ninja"
+theme_override_colors/font_color = Color(1, 0.9, 0.7, 1)
+theme_override_font_sizes/font_size = 86
+text = "Ninja Aurora"
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1852885695]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 0.8, 1)
+theme_override_font_sizes/font_size = 54
 text = "Играть"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1741331353]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 0.8, 1)
+theme_override_font_sizes/font_size = 54
 text = "Настройки"
