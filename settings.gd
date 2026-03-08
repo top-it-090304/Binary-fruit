@@ -29,6 +29,11 @@ func _on_music_toggled(button_pressed: bool) -> void:
 	if game_manager:
 		game_manager.music_enabled = button_pressed
 		game_manager.save_settings()
+	
+	# Если игровая сцена активна, обновим музыку сразу
+	var game_node = get_tree().get_root().find_child("Game", true, false)
+	if game_node and game_node.has_method("_update_music_from_settings"):
+		game_node._update_music_from_settings()
 
 func _on_back_pressed() -> void:
 	# Возвращаемся на предыдущий экран (главное меню)

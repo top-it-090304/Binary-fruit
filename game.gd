@@ -14,6 +14,11 @@ extends Control
 @onready var watermelon_half_sprite: Sprite2D = $UI/GameOverPanel/VBoxContainer/ScoreContainer/WatermelonHalfSprite
 @onready var continue_button: Button = $UI/GameOverPanel/VBoxContainer/ContinueButton
 
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
+@onready var slice_player: AudioStreamPlayer = $SlicePlayer
+@onready var bomb_player: AudioStreamPlayer = $BombPlayer
+@onready var lose_player: AudioStreamPlayer = $LosePlayer
+
 # Для отрисовки линии разреза
 var cut_line_points: Array[Vector2] = []
 
@@ -30,18 +35,13 @@ var stain_scene = preload("res://stain.tscn")
 var main_menu_scene = preload("res://main_menu.tscn")
 
 func _ready() -> void:
-	
-	if ResourceLoader.exists("res://main_menu.tscn"):
-		main_menu_scene = preload("res://main_menu.tscn")
-		print("main_menu.tscn загружен")
-	else:
-		print("main_menu.tscn НЕ НАЙДЕН!")
-	
 	game_manager = get_node("/root/GameManager")
 	game_manager.reset_game()
 	game_manager.lives_changed.connect(_on_lives_changed)
 	game_manager.score_changed.connect(_on_score_changed)
 	game_manager.game_over.connect(_on_game_over)
+	
+	_update_music_from_settings()
 	
 	start_countdown()
 	
@@ -109,6 +109,15 @@ func spawn_fruit() -> void:
 	fruits.append(fruit)
 	game_area.add_child(fruit)
 	fruit.global_position = Vector2(x, 1650)
+
+func _update_music_from_settings() -> void:
+	if not music_player:
+		return
+	if game_manager and game_manager.music_enabled and music_player.stream:
+		if not music_player.playing:
+			music_player.play()
+	else:
+		music_player.stop()
 
 func _touch_to_canvas(screen_pos: Vector2) -> Vector2:
 	var vp = get_viewport()
@@ -260,6 +269,9 @@ func cut_fruit(fruit: RigidBody2D, cut_position: Vector2) -> void:
 		fruit.queue_free()
 		fruits.erase(fruit)
 		return
+
+	if game_manager and game_manager.sound_enabled and slice_player and slice_player.stream:
+		slice_player.play()
 	
 	# Создаем две половинки
 	create_fruit_halves(fruit, cut_position)
@@ -336,9 +348,12 @@ func handle_bomb_cut() -> void:
 	bomb_message.text = "Упс, вы разрезали бомбу!"
 	bomb_message.visible = true
 	
+	if game_manager and game_manager.sound_enabled and bomb_player and bomb_player.stream:
+		bomb_player.play()
+	
 	await get_tree().create_timer(2.0).timeout
 	bomb_message.visible = false
-
+	
 	game_manager.lose_life()
 
 func _on_lives_changed(new_lives: int) -> void:
@@ -355,6 +370,10 @@ func _on_game_over() -> void:
 	cut_line_points.clear()
 	is_dragging = false
 	queue_redraw()
+
+	_update_music_from_settings()  # остановит музыку
+	if game_manager and game_manager.sound_enabled and lose_player and lose_player.stream:
+		lose_player.play()
 
 	Input.set_custom_mouse_cursor(null)
 	

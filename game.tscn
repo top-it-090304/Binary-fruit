@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bk2onswxceodu" path="res://game.gd" id="1_game"]
 [ext_resource type="Texture2D" uid="uid://cu4non8apcpmw" path="res://assets/sprites/background.png" id="2_e2o6t"]
+[ext_resource type="AudioStream" path="res://assets/audio/playMusic.mp3" id="3_music"]
+[ext_resource type="AudioStream" path="res://assets/audio/slice.wav" id="4_slice"]
+[ext_resource type="AudioStream" path="res://assets/audio/fruit-ninja-combo.mp3" id="5_bomb"]
+[ext_resource type="AudioStream" path="res://assets/audio/lose.wav" id="6_lose"]
 
 [node name="Game" type="Control" unique_id=1453581504]
 layout_mode = 3
@@ -190,3 +194,16 @@ wait_time = 1.5
 
 [node name="StainTimer" type="Timer" parent="." unique_id=857274766]
 wait_time = 0.5
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1900000001]
+stream = ExtResource("3_music")
+autoplay = false
+
+[node name="SlicePlayer" type="AudioStreamPlayer" parent="." unique_id=1900000002]
+stream = ExtResource("4_slice")
+
+[node name="BombPlayer" type="AudioStreamPlayer" parent="." unique_id=1900000003]
+stream = ExtResource("5_bomb")
+
+[node name="LosePlayer" type="AudioStreamPlayer" parent="." unique_id=1900000004]
+stream = ExtResource("6_lose")
