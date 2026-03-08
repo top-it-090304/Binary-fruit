@@ -102,7 +102,7 @@ func spawn_fruit() -> void:
 		fruit.is_bomb = true
 	else:
 		var fruit_types = [ "banana", "watermelon", "pineapple", "kiwi",
-		 "strawberry", "mandarin", "lemon", "grape", "garnet", "grapefruit","orange", 
+		 "strawberry", "lemon", "grape", "garnet", "grapefruit","orange", 
 		"passionfruit", "peach", "pear"]
 		fruit.fruit_type = fruit_types[randi() % fruit_types.size()]
 	
@@ -140,20 +140,10 @@ func _point_to_segment_distance(p: Vector2, a: Vector2, b: Vector2) -> float:
 	var proj = a + t * ab
 	return p.distance_to(proj)
 
-func _continue_button_hit(screen_pos: Vector2) -> bool:
-	var canvas_pos = _touch_to_canvas(screen_pos)
-	var button_rect = Rect2(continue_button.global_position, continue_button.size)
-	return button_rect.grow(10.0).has_point(canvas_pos)
-
 func _input(event: InputEvent) -> void:
+	# Когда показан баннер Game Over, вся обработка идёт через GUI (signal pressed у кнопки).
+	# Здесь просто игнорируем ввод, чтобы нож не работал.
 	if game_over_panel.visible:
-		if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
-			var pos = event.position
-			if _continue_button_hit(pos):
-				_on_continue_pressed()
-				if get_viewport():  
-					get_viewport().set_input_as_handled()
-				return
 		return
 	
 	if not is_game_active:
