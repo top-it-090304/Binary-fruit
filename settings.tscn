@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1e2f3g4h5i6"]
 
 [ext_resource type="Script" uid="uid://bt7kvdx0f2pyj" path="res://settings.gd" id="1_settings"]
+[ext_resource type="Texture2D" path="res://assets/sprites/background.png" id="2_bg"]
 
 [node name="Settings" type="Control" unique_id=192831561]
 layout_mode = 3
@@ -11,53 +12,75 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_settings")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1369655942]
+[node name="Background" type="TextureRect" parent="." unique_id=1369655942]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.7490196, 0.8039216, 0.41568628, 1)
+texture = ExtResource("2_bg")
+stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1240156406]
+[node name="Panel" type="ColorRect" parent="." unique_id=1240156405]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.08, 0.92)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1240156406]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -220.0
+offset_right = 220.0
+offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=1266591825]
+[node name="Title" type="Label" parent="Panel/VBoxContainer" unique_id=1266591825]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.9, 0.7, 1)
 theme_override_font_sizes/font_size = 100
 text = "Настройки"
 horizontal_alignment = 1
 
-[node name="SoundCheckBox" type="CheckBox" parent="VBoxContainer" unique_id=673770745]
+[node name="SoundCheckBox" type="CheckBox" parent="Panel/VBoxContainer" unique_id=673770745]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.94509804, 0.9490196, 0.9490196, 1)
-theme_override_colors/icon_normal_color = Color(0.17437619, 0.61247015, 0, 1)
-theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/icon_normal_color = Color(0.7, 0.95, 0.4, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.3)
 theme_override_font_sizes/font_size = 60
-theme_override_colors/checkbox_unchecked_color = Color(0, 0.23921569, 1, 1)
 text = "Звук"
 
-[node name="MusicCheckBox" type="CheckBox" parent="VBoxContainer" unique_id=461626970]
+[node name="MusicCheckBox" type="CheckBox" parent="Panel/VBoxContainer" unique_id=461626970]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "Музыка"
 
-[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1738731286]
+[node name="BackButton" type="Button" parent="Panel/VBoxContainer" unique_id=1738731286]
 layout_mode = 2
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/bg_color = Color(0.13, 0.16, 0.22, 0.9)
+theme_override_colors/bg_hover = Color(0.2, 0.25, 0.35, 0.95)
+theme_override_colors/bg_pressed = Color(0.08, 0.1, 0.16, 1)
+theme_override_constants/corner_radius = 28
 text = "Назад"
