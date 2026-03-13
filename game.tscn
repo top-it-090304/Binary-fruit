@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://bk2onswxceodu" path="res://game.gd" id="1_game"]
 [ext_resource type="Texture2D" uid="uid://cu4non8apcpmw" path="res://assets/sprites/background.png" id="2_e2o6t"]
 [ext_resource type="AudioStream" path="res://assets/audio/playMusic.mp3" id="3_music"]
-[ext_resource type="AudioStream" path="res://assets/audio/slice.wav" id="4_slice"]
-[ext_resource type="AudioStream" path="res://assets/audio/fruit-ninja-combo.mp3" id="5_bomb"]
-[ext_resource type="AudioStream" path="res://assets/audio/lose.wav" id="6_lose"]
+[ext_resource type="AudioStream" path="res://assets/audio/fruitSection.mp3" id="4_slice"]
+[ext_resource type="AudioStream" path="res://assets/audio/bomb.wav" id="5_bomb"]
+[ext_resource type="AudioStream" path="res://assets/audio/loss.mp3" id="6_lose"]
 
 [node name="Game" type="Control" unique_id=1453581504]
 layout_mode = 3
