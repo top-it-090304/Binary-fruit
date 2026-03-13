@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dad8e7f6g5h4"]
 
 [ext_resource type="Script" uid="uid://c0dmwtsso7hf2" path="res://main_menu.gd" id="1_main"]
-[ext_resource type="Texture2D" uid="uid://b34445lctjn0p" path="res://assets/menu.png" id="2_menu_bg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/menu.png" id="2_menu_bg"]
 
 [node name="MainMenu" type="Control" unique_id=467631516]
 layout_mode = 3
@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = -610.0
-offset_right = 260.0
-offset_bottom = -110.0
+offset_left = -360.0
+offset_top = 430.0
+offset_right = 360.0
+offset_bottom = 620.0
 grow_horizontal = 2
 grow_vertical = 0
 flat = true
@@ -44,25 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = -110.0
-offset_right = 260.0
-offset_bottom = 390.0
-grow_horizontal = 2
-grow_vertical = 0
-flat = true
-
-[node name="ExitArea" type="Button" parent="." unique_id=200000003]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = 390.0
-offset_right = 260.0
-offset_bottom = 890.0
+offset_left = -360.0
+offset_top = 650.0
+offset_right = 360.0
+offset_bottom = 840.0
 grow_horizontal = 2
 grow_vertical = 0
 flat = true
