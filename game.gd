@@ -11,8 +11,7 @@ extends Control
 @onready var stain_timer: Timer = $StainTimer
 @onready var game_over_panel: Control = $UI/GameOverPanel
 @onready var game_over_score_label: Label = $UI/GameOverPanel/VBoxContainer/ScoreContainer/ScoreLabel
-@onready var watermelon_half_sprite: Sprite2D = $UI/GameOverPanel/VBoxContainer/ScoreContainer/WatermelonHalfSprite
-@onready var continue_button: Button = $UI/GameOverPanel/VBoxContainer/ContinueButton
+@onready var continue_button: Button = $UI/GameOverPanel/ContinueButton
 
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var slice_player: AudioStreamPlayer = $SlicePlayer
@@ -150,9 +149,18 @@ func _point_to_segment_distance(p: Vector2, a: Vector2, b: Vector2) -> float:
 	return p.distance_to(proj)
 
 func _input(event: InputEvent) -> void:
-	# Когда показан баннер Game Over, вся обработка идёт через GUI (signal pressed у кнопки).
-	# Здесь просто игнорируем ввод, чтобы нож не работал.
+	# Когда показан экран очков — только обрабатываем нажатие по области «Продолжить» (резерв, если кнопка не получит событие).
 	if game_over_panel.visible:
+		var released := false
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			released = true
+		if event is InputEventScreenTouch and not event.pressed:
+			released = true
+		if released:
+			var pos := _touch_to_canvas(event.position)
+			if continue_button.get_global_rect().has_point(pos):
+				_on_continue_pressed()
+				return
 		return
 	
 	if not is_game_active:
@@ -381,15 +389,13 @@ func _on_game_over() -> void:
 
 func show_game_over_banner() -> void:
 	game_over_score_label.text = str(game_manager.score)
-	var watermelon_half_texture = load("res://assets/sprites/watermelonHalf.png")
-	if watermelon_half_texture:
-		watermelon_half_sprite.texture = watermelon_half_texture
 
 	game_over_panel.visible = true
 	game_over_panel.modulate.a = 0.0
 	
 	continue_button.disabled = false
 	continue_button.visible = true
+	continue_button.grab_focus()
 	
 	var tween = create_tween()
 	tween.tween_property(game_over_panel, "modulate:a", 1.0, 0.6)
@@ -410,8 +416,12 @@ func clear_game_objects() -> void:
 	is_dragging = false
 	queue_redraw()
 
+var _continuing := false
+
 func _on_continue_pressed() -> void:
-	print("Переход на главное меню")
+	if _continuing:
+		return
+	_continuing = true
 	
 	is_game_active = false
 	spawn_timer.stop()
