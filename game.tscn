@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bk2onswxceodu" path="res://game.gd" id="1_game"]
 [ext_resource type="Texture2D" uid="uid://cu4non8apcpmw" path="res://assets/sprites/background.png" id="2_e2o6t"]
-[ext_resource type="AudioStream" path="res://assets/audio/playMusic.mp3" id="3_music"]
-[ext_resource type="AudioStream" path="res://assets/audio/fruitSection.mp3" id="4_slice"]
-[ext_resource type="AudioStream" path="res://assets/audio/bomb.wav" id="5_bomb"]
-[ext_resource type="AudioStream" path="res://assets/audio/loss.mp3" id="6_lose"]
+[ext_resource type="AudioStream" uid="uid://bthv58xf2tsw0" path="res://assets/audio/playMusic.mp3" id="3_music"]
+[ext_resource type="AudioStream" uid="uid://b77pyyevbmhin" path="res://assets/audio/fruitSection.mp3" id="4_slice"]
+[ext_resource type="AudioStream" uid="uid://o467e77f2eih" path="res://assets/audio/bomb.wav" id="5_bomb"]
+[ext_resource type="AudioStream" uid="uid://bxdb8p7yenplk" path="res://assets/audio/loss.mp3" id="6_lose"]
+[ext_resource type="Texture2D" uid="uid://gtt5kwl1evgw" path="res://assets/sprites/scores.png" id="7_scores"]
 
 [node name="Game" type="Control" unique_id=1453581504]
 layout_mode = 3
@@ -113,26 +114,22 @@ vertical_alignment = 1
 [node name="GameOverPanel" type="Control" parent="UI" unique_id=411669365]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -300.0
-offset_right = 400.0
-offset_bottom = 300.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="UI/GameOverPanel" unique_id=1762800662]
+[node name="Background" type="TextureRect" parent="UI/GameOverPanel" unique_id=1762800662]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.15, 0.1, 0.05, 0.95)
+texture = ExtResource("7_scores")
+stretch_mode = 6
 
 [node name="Border" type="ColorRect" parent="UI/GameOverPanel" unique_id=1433116316]
 layout_mode = 1
@@ -145,49 +142,54 @@ offset_right = -5.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.8, 0.6, 0.3, 0.8)
+color = Color(0.8, 0.6, 0.3, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/GameOverPanel" unique_id=956261113]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.26
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -250.0
-offset_right = 350.0
-offset_bottom = 250.0
+offset_left = -280.0
+offset_top = 34.0
+offset_right = 280.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TitleLabel" type="Label" parent="UI/GameOverPanel/VBoxContainer" unique_id=77453630]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
-theme_override_font_sizes/font_size = 72
-text = "Игра окончена!"
-horizontal_alignment = 1
+alignment = 1
 
 [node name="ScoreContainer" type="HBoxContainer" parent="UI/GameOverPanel/VBoxContainer" unique_id=1359780709]
 layout_mode = 2
+size_flags_vertical = 4
 alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="UI/GameOverPanel/VBoxContainer/ScoreContainer" unique_id=621803262]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 96
 text = "0"
 horizontal_alignment = 1
 
-[node name="WatermelonHalfSprite" type="Sprite2D" parent="UI/GameOverPanel/VBoxContainer/ScoreContainer" unique_id=801078614]
-position = Vector2(20, 0)
-scale = Vector2(0.4, 0.4)
-
-[node name="ContinueButton" type="Button" parent="UI/GameOverPanel/VBoxContainer" unique_id=567114665]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+[node name="ContinueButton" type="Button" parent="UI/GameOverPanel" unique_id=567114665]
+modulate = Color(1, 1, 1, 0.050980393)
+self_modulate = Color(1, 1, 1, 0.015686275)
+custom_minimum_size = Vector2(380, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.522
+anchor_right = 0.5
+anchor_bottom = 0.561
+offset_left = -260.0
+offset_top = -9.25
+offset_right = 260.0
+offset_bottom = 80.75
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "Продолжить"
+flat = true
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1605093532]
 wait_time = 1.5
@@ -197,7 +199,6 @@ wait_time = 0.5
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1900000001]
 stream = ExtResource("3_music")
-autoplay = false
 
 [node name="SlicePlayer" type="AudioStreamPlayer" parent="." unique_id=1900000002]
 stream = ExtResource("4_slice")

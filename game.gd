@@ -433,4 +433,3 @@ func _on_continue_pressed() -> void:
 	bomb_message.visible = false
 	
 	get_tree().change_scene_to_file("res://main_menu.tscn")
-	
