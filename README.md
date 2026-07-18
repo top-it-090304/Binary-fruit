@@ -58,6 +58,8 @@ Ninja Aurora — аркадная игра в жанре «слайсер» дл
 ### Главное меню
 <img src="https://github.com/top-it-090304/Binary-fruit/blob/main/Главный%20экран.png?raw=true" alt="Главное меню" width="300" />
 
+### настройки
+<img src="https://github.com/top-it-090304/Binary-fruit/blob/main/настройки.png?raw=true" alt="Настройки" width="300" />
 
 </div>
 
