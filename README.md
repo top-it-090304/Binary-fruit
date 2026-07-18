@@ -1,6 +1,17 @@
+<div align="center">
+  
 ![Image](https://raw.githubusercontent.com/top-it-090304/F-S/refs/heads/readme-editing/banner.jpg)
 
 # 🥷 Ninja Aurora
+
+[![Godot Engine](https://img.shields.io/badge/Godot-4.4-blue?logo=godot-engine&logoColor=white)](https://godotengine.org)
+[![GDScript](https://img.shields.io/badge/Language-GDScript-green)](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/)
+[![Platform](https://img.shields.io/badge/Platform-ОС%20«Аврора»-purple)](https://auroraos.ru)
+[![GitHub](https://img.shields.io/badge/Repo-Binary-fruit-black?logo=github)](https://github.com/top-it-090304/Binary-fruit)
+
+</div>
+
+---
 
 **Slice 'em all!**  
 Ninja Aurora — аркадная игра в жанре «слайсер» для операционной системы «Аврора». Режьте фрукты, уворачивайтесь от бомб и ставьте рекорды. Разработано на Godot Engine.
